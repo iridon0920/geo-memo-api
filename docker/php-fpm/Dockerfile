@@ -24,5 +24,6 @@ WORKDIR /app
 
 RUN composer install
 
+RUN cp .env.example .env
 RUN php artisan key:generate
 RUN chmod -R a+w storage/ bootstrap/cache
