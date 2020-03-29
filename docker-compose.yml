@@ -16,6 +16,7 @@ services:
       dockerfile: ./docker/php-fpm/Dockerfile
     volumes:
       - ./:/app
+      - $SSH_PATH:/root/.ssh
   mysql:
     image: mysql:5.7
     environment:

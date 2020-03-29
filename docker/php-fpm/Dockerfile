@@ -8,7 +8,8 @@ RUN apk update && \
     libzip-dev \
     zlib-dev \
     zip \
-    unzip
+    unzip \
+    openssh
 
 RUN docker-php-ext-install zip \
     pdo_mysql
