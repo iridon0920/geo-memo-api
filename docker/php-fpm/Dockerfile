@@ -10,7 +10,8 @@ RUN apk update && \
     zip \
     unzip
 
-RUN docker-php-ext-install zip
+RUN docker-php-ext-install zip \
+    pdo_mysql
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 RUN composer global require hirak/prestissimo
