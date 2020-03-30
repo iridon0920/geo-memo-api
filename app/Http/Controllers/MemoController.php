@@ -35,7 +35,13 @@ class MemoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Memo::insert(
+            [
+                'text' => $request->input('text'),
+                'latitude' => $request->input('latitude'),
+                'longitude' => $request->input('longitude'),
+            ]
+        );
     }
 
     /**
@@ -69,7 +75,11 @@ class MemoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Memo::where('id', $id)->update([
+            'text' => $request->input('text'),
+            'latitude' => $request->input('latitude'),
+            'longitude' => $request->input('longitude'),
+        ]);
     }
 
     /**
